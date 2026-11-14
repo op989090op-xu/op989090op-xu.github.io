@@ -1,0 +1,524 @@
+:root {
+    --bg-page: #f0f4f8;
+    --bg-card: #ffffff;
+    --blue-light: #4fa3bd;
+    --blue-mid: #0c6991;
+    --blue-dark: #133b5c;
+    --text-main: #222222;
+    --text-muted: #555555;
+    --border-color: #d0dce5;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+  }
+  
+  .navbar {
+    background-color: var(--blue-dark);
+    color: #ffffff;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .nav-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    /* [特效] 導覽列連結滑鼠移入變色 - 使用 transition + background-color */
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: var(--blue-light);
+  }
+  
+  .container {
+    max-width: 1280px;
+    margin: 24px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 24px;
+    align-items: start;
+  }
+  
+  .left-column,
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    color: var(--blue-dark);
+    border-left: 5px solid var(--blue-light);
+    padding-left: 10px;
+    margin-bottom: 18px;
+  }
+  
+  .section-title span {
+    font-size: 0.9rem;
+    color: var(--blue-mid);
+    font-weight: normal;
+    margin-left: 6px;
+  }
+  
+  .sub-title {
+    margin-top: 28px;
+  }
+  
+  .header-card {
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .top-color-bar {
+    display: flex;
+    height: 68px;
+    width: 100%;
+  }
+  
+  .bar-1 {
+    flex: 1;
+    background-color: var(--blue-light);
+  }
+  
+  .bar-2 {
+    flex: 1;
+    background-color: var(--blue-mid);
+  }
+  
+  .bar-3 {
+    flex: 1;
+    background-color: var(--blue-dark);
+  }
+  
+  .profile-main {
+    display: flex;
+    gap: 20px;
+    padding: 0 24px 20px 24px;
+    background: linear-gradient(to bottom, #e6f2f7 0%, #ffffff 100%);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .avatar-box {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    background-color: #cccccc;
+    margin-top: -45px;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  }
+  
+  .avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+  
+  .profile-info {
+    padding-top: 14px;
+  }
+  
+  .name {
+    font-size: 1.6rem;
+    color: var(--blue-dark);
+  }
+  
+  .school {
+    font-size: 0.95rem;
+    color: var(--blue-mid);
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .slogan {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  
+  .header-btns {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: var(--blue-mid);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    border: 1px solid var(--blue-mid);
+    /* [特效] 按鈕滑鼠移入上浮與變色 - 使用 transition + transform:translateY */
+    transition: all 0.25s ease;
+  }
+  
+  .btn:hover {
+    background-color: var(--blue-dark);
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline {
+    background-color: #ffffff;
+    color: var(--blue-dark);
+  }
+  
+  .btn-outline:hover {
+    background-color: #eef6fa;
+    color: var(--blue-dark);
+  }
+  
+  .bio-box {
+    padding: 20px 24px;
+  }
+  
+  .bio-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-align: justify;
+  }
+  
+  .circle-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+    padding: 6px 0;
+  }
+  
+  .circle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* [特效] 滑鼠移到技能圓環時放大 - 使用 transition + transform:scale */
+    transition: transform 0.3s ease;
+  }
+  
+  .circle-item:hover {
+    transform: scale(1.08);
+  }
+  
+  /* [語法來源] 純 CSS 圓錐漸層進度圓環參考 MDN conic-gradient 語法 */
+  .circle-ring {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: conic-gradient(
+      var(--blue-light) calc(var(--percent) * 1%),
+      #e2e8f0 0
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .circle-ring span {
+    width: 64px;
+    height: 64px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--blue-dark);
+  }
+  
+  .circle-item p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-main);
+    line-height: 1.4;
+  }
+  
+  .bar-skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .bar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* [特效] 滑鼠移到技能長條列時微幅右移 - 使用 transition + transform:translateX */
+    transition: transform 0.25s ease;
+  }
+  
+  .bar-item:hover {
+    transform: translateX(4px);
+  }
+  
+  .bar-label {
+    width: 125px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-main);
+    line-height: 1.3;
+    flex-shrink: 0;
+  }
+  
+  .bar-track {
+    flex: 1;
+    height: 15px;
+    background-color: #e6eef4;
+    border: 1px solid var(--blue-dark);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+    border-radius: 20px;
+  }
+  
+  .bar-percent {
+    width: 38px;
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--blue-mid);
+    flex-shrink: 0;
+  }
+  
+  .exp-item {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed var(--border-color);
+  }
+  
+  .exp-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .exp-period {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: var(--blue-mid);
+    background-color: #e6f2f7;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  
+  .exp-text h3 {
+    font-size: 1.05rem;
+    color: var(--blue-dark);
+    margin-bottom: 6px;
+  }
+  
+  .exp-text p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: justify;
+  }
+  
+  .exp-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 2px solid var(--blue-dark);
+    padding-left: 14px;
+  }
+  
+  .exp-media img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: #eef2f5;
+    /* [特效] 經歷佐證圖片滑鼠移入微幅放大 - 使用 transition + transform:scale */
+    transition: transform 0.3s ease;
+  }
+  
+  .exp-media img:hover {
+    transform: scale(1.03);
+  }
+  
+  .proof-link {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--blue-mid);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .media-two-photos {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .media-two-photos img {
+    width: 100%;
+    height: 145px;
+    object-fit: contain;
+    background-color: #f8fafc;
+  }
+  
+  /* [特效] 佐證資料連結滑鼠移入變色加底線 - 使用 color + text-decoration */
+  a.proof-link:hover {
+    text-decoration: underline;
+    color: var(--blue-dark);
+  }
+  
+  .contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 14px;
+  }
+  
+  .social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    /* [特效] 社群圓形圖示滑鼠移入旋轉放大 - 使用 transition + transform */
+    transition: transform 0.3s ease;
+  }
+  
+  .social-btn:hover {
+    transform: scale(1.12) rotate(6deg);
+  }
+  
+  .fb {
+    background-color: #1877f2;
+  }
+  
+  .ig {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+  
+  .line {
+    background-color: #00b530;
+  }
+  
+  .gh {
+    background-color: var(--blue-dark);
+  }
+  
+  .email-box {
+    text-align: right;
+  }
+  
+  .email-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1.5px solid var(--blue-dark);
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    /* [特效] Email 按鈕滑鼠移入反白變色 - 使用 transition */
+    transition: all 0.25s ease;
+  }
+  
+  .email-btn:hover {
+    background-color: var(--blue-dark);
+    color: #ffffff;
+  }
+  
+  .email-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+  
+  .copyright {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+  }
+  
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  
+    .exp-item {
+      grid-template-columns: 1fr;
+    }
+  
+    .exp-media {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
